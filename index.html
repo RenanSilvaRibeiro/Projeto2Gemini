@@ -1,157 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Segurança Digital</title>
-    <style>
-        /* Estilos focados em Acessibilidade */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Segurança Digital para a Terceira Idade</title>
+  <style>
+    /* RESET E CONFIGURAÇÕES GERAIS DE ACESSIBILIDADE */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f6f9;
-            color: #1a1a1a;
-            line-height: 1.6;
-            padding: 20px;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.25rem; /* Fonte ampliada para facilitar a leitura (20px) */
+      line-height: 1.6;
+      color: #1a1a1a; /* Alto contraste: texto escuro */
+      background-color: #f4f6f8; /* Fundo suave para não cansar a vista */
+    }
 
-        /* Container Principal com largura limitada para facilitar a leitura */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 24px;
-            border-radius: 12px;
-            border: 2px solid #004080;
-        }
+    /* CABEÇALHO */
+    header {
+      background-color: #004b87; /* Azul escuro de alto contraste */
+      color: #ffffff;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 5px solid #ffcc00;
+    }
 
-        /* Cabeçalho de alto contraste */
-        header {
-            text-align: center;
-            background-color: #004080;
-            color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 24px;
-        }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
 
-        h1 {
-            font-size: 2rem; /* Fonte grande */
-            margin-bottom: 8px;
-        }
+    header p {
+      font-size: 1.3rem;
+    }
 
-        .subtitulo {
-            font-size: 1.2rem;
-        }
+    /* CONTAINER PRINCIPAL */
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
 
-        /* Cartões de Dicas */
-        .dica-card {
-            background-color: #eef4fc;
-            border-left: 6px solid #004080;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 6px;
-        }
+    /* SEÇÃO DE INTRODUÇÃO */
+    .intro {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 2px solid #d0d7de;
+      margin-bottom: 2rem;
+    }
 
-        h2 {
-            font-size: 1.5rem;
-            color: #004080;
-            margin-bottom: 10px;
-        }
+    .intro h2 {
+      color: #004b87;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
 
-        p {
-            font-size: 1.25rem; /* Letras grandes para facilitar a visualização */
-            color: #222222;
-        }
+    /* CARDS DE DICAS */
+    .dicas-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-        /* Alertas de Atenção */
-        .atencao {
-            background-color: #fff3cd;
-            border-left-color: #856404;
-        }
+    .card-dica {
+      background-color: #ffffff;
+      border: 3px solid #004b87;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .atencao h2 {
-            color: #856404;
-        }
+    .card-dica h3 {
+      color: #004b87;
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-        /* Rodapé com botão de apoio grande */
-        footer {
-            margin-top: 30px;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 2px solid #cccccc;
-        }
+    .card-dica p {
+      margin-bottom: 1rem;
+    }
 
-        .btn-ajuda {
-            display: inline-block;
-            background-color: #00802b;
-            color: #ffffff;
-            font-size: 1.3rem;
-            font-weight: bold;
-            padding: 16px 28px;
-            text-decoration: none;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-        }
+    .alerta-box {
+      background-color: #fff3cd;
+      border-left: 6px solid #856404;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+    }
 
-        .btn-ajuda:hover {
-            background-color: #00591e;
-        }
-    </style>
+    /* BOTÃO DE CONTATO / EMERGÊNCIA */
+    .ajuda-section {
+      text-align: center;
+      margin-top: 3rem;
+      background-color: #e7f1ff;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid #b6d4fe;
+    }
+
+    .btn-ajuda {
+      display: inline-block;
+      background-color: #28a745; /* Verde legível */
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 50px;
+      margin-top: 1rem;
+      border: 3px solid #1e7e34;
+      /* Destaque para facilitar o foco de navegação por teclado */
+      transition: background-color 0.2s;
+    }
+
+    .btn-ajuda:hover, .btn-ajuda:focus {
+      background-color: #1e7e34;
+      outline: 4px solid #ffcc00;
+    }
+
+    /* RODAPÉ */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      font-size: 1.1rem;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Segurança na Internet</h1>
-            <p class="subtitulo">Dicas simples para navegar sem medo</p>
-        </header>
+  <header>
+    <h1>Segurança na Internet</h1>
+    <p>Dicas simples e diretas para navegar com tranquilidade</p>
+  </header>
 
-        <main>
-            <section class="dica-card">
-                <h2>1. Cuidado com Links e Mensagens</h2>
-                <p>
-                    Nunca clique em links recebidos por mensagem ou e-mail de pessoas desconhecidas. 
-                    Bancos e lojas <strong>não pedem sua senha</strong> por mensagem.
-                </p>
-            </section>
+  <main>
+    <section class="intro">
+      <h2>Bem-vindo(a)!</h2>
+      <p>A internet ajuda a conversar com a família, pagar contas e se divertir. Porém, é importante tomar alguns cuidados para não cair em golpes. Veja as dicas abaixo:</p>
+    </section>
 
-            <section class="dica-card atencao">
-                <h2>2. Desconfie de Ofertas Irresistíveis</h2>
-                <p>
-                    Se algo parecer bom demais para ser verdade (como prêmios ou produtos muito baratos), 
-                    pare e peça a opinião de um familiar de sua confiança antes de comprar.
-                </p>
-            </section>
+    <section class="dicas-grid">
 
-            <section class="dica-card">
-                <h2>3. Crie Senhas Fortes</h2>
-                <p>
-                    Evite usar sua data de nascimento ou nomes de parentes como senha. 
-                    Anote suas senhas num caderno em casa, num local seguro, em vez de salvar no celular.
-                </p>
-            </section>
+      <article class="card-dica">
+        <h3>1. Cuidado com Mensagens Suspeitas</h3>
+        <p>Se você receber uma mensagem no WhatsApp ou e-mail de alguém pedindo dinheiro urgente, <strong>não transfira nada imediatamente</strong>.</p>
+        <div class="alerta-box">
+          💡 O que fazer: Ligue diretamente para o seu parente ou amigo antes de tomar qualquer atitude.
+        </div>
+      </article>
 
-            <section class="dica-card atencao">
-                <h2>4. Golpes no WhatsApp (Pedindo Dinheiro)</h2>
-                <p>
-                    Se algum amigo ou familiar mandar mensagem pedindo dinheiro porque mudou de número, 
-                    <strong>ligue para o número antigo dele</strong> para confirmar se é verdade.
-                </p>
-            </section>
-        </main>
+      <article class="card-dica">
+        <h3>2. Não Clique em Links Desconhecidos</h3>
+        <p>Links que chegam por mensagem oferecendo prêmios, promoções exageradas ou avisos de "sua conta bancária foi bloqueada" costumam ser falsos.</p>
+        <div class="alerta-box">
+          💡 O que fazer: Apague a mensagem e não clique no endereço fornecido.
+        </div>
+      </article>
 
-        <footer>
-            <p style="margin-bottom: 15px;">Ficou com alguma dúvida?</p>
-            <a href="#" class="btn-ajuda">Pedir Ajuda a um Familiar</a>
-        </footer>
-    </div>
+      <article class="card-dica">
+        <h3>3. Nunca Passe Senhas ou Códigos</h3>
+        <p>Bancos e empresas sérias <strong>nunca pedem sua senha</strong> ou códigos enviados por SMS por telefone ou mensagem.</p>
+        <div class="alerta-box">
+          💡 O que fazer: Nunca informe o código de validação que chega no seu celular para terceiros.
+        </div>
+      </article>
+
+      <article class="card-dica">
+        <h3>4. Use Senhas Fortes e Anotadas em Seguro</h3>
+        <p>Evite usar datas de nascimento ou números fáceis como "123456". Tente misturar letras e números.</p>
+        <div class="alerta-box">
+          💡 O que fazer: Se tiver dificuldade para lembrar, anote suas senhas em um caderno físico guardado em local seguro na sua casa.
+        </div>
+      </article>
+
+    </section>
+
+    <section class="ajuda-section">
+      <h2>Ficou com dúvida sobre algo suspeito?</h2>
+      <p>Sempre peça ajuda a um familiar, amigo de confiança ou vá pessoalmente à sua agência bancária.</p>
+      <a href="tel:190" class="btn-ajuda">Pedir Ajuda de Emergência</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Aplicativo educativo focado na acessibilidade e segurança digital da pessoa idosa.</p>
+  </footer>
 
 </body>
 </html>
