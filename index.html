@@ -4,61 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Segurança Digital</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos focados em Acessibilidade */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f9;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Container Principal com largura limitada para facilitar a leitura */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            border: 2px solid #004080;
+        }
+
+        /* Cabeçalho de alto contraste */
+        header {
+            text-align: center;
+            background-color: #004080;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 2rem; /* Fonte grande */
+            margin-bottom: 8px;
+        }
+
+        .subtitulo {
+            font-size: 1.2rem;
+        }
+
+        /* Cartões de Dicas */
+        .dica-card {
+            background-color: #eef4fc;
+            border-left: 6px solid #004080;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #004080;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.25rem; /* Letras grandes para facilitar a visualização */
+            color: #222222;
+        }
+
+        /* Alertas de Atenção */
+        .atencao {
+            background-color: #fff3cd;
+            border-left-color: #856404;
+        }
+
+        .atencao h2 {
+            color: #856404;
+        }
+
+        /* Rodapé com botão de apoio grande */
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid #cccccc;
+        }
+
+        .btn-ajuda {
+            display: inline-block;
+            background-color: #00802b;
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 16px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-ajuda:hover {
+            background-color: #00591e;
+        }
+    </style>
 </head>
 <body>
 
-    <header class="cabecalho">
-        <h1>Guia Prático de Segurança Digital</h1>
-        <p>Aprenda a navegar na internet de forma segura e sem complicações.</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Segurança na Internet</h1>
+            <p class="subtitulo">Dicas simples para navegar sem medo</p>
+        </header>
 
-    <main class="conteudo-principal">
+        <main>
+            <section class="dica-card">
+                <h2>1. Cuidado com Links e Mensagens</h2>
+                <p>
+                    Nunca clique em links recebidos por mensagem ou e-mail de pessoas desconhecidas. 
+                    Bancos e lojas <strong>não pedem sua senha</strong> por mensagem.
+                </p>
+            </section>
 
-        <section class="card-dica">
-            <div class="icone">🔒</div>
-            <h2>1. Senhas Fortes e Seguras</h2>
-            <p>
-                Evite usar datas de nascimento ou nomes de parentes nas suas senhas. 
-                Misture palavras, números e símbolos (como @ ou #) e <strong>nunca anote suas senhas em papéis fáceis de achar</strong>.
-            </p>
-        </section>
+            <section class="dica-card atencao">
+                <h2>2. Desconfie de Ofertas Irresistíveis</h2>
+                <p>
+                    Se algo parecer bom demais para ser verdade (como prêmios ou produtos muito baratos), 
+                    pare e peça a opinião de um familiar de sua confiança antes de comprar.
+                </p>
+            </section>
 
-        <section class="card-dica">
-            <div class="icone">📩</div>
-            <h2>2. Cuidado com Mensagens Suspeitas</h2>
-            <p>
-                Se receber mensagens de bancos ou empresas pedindo seus dados, <strong>não clique em links</strong>. 
-                Bancos de verdade não pedem senhas pelo WhatsApp ou por mensagem de texto.
-            </p>
-        </section>
+            <section class="dica-card">
+                <h2>3. Crie Senhas Fortes</h2>
+                <p>
+                    Evite usar sua data de nascimento ou nomes de parentes como senha. 
+                    Anote suas senhas num caderno em casa, num local seguro, em vez de salvar no celular.
+                </p>
+            </section>
 
-        <section class="card-dica">
-            <div class="icone">📱</div>
-            <h2>3. Desconfie de Pedidos de Dinheiro</h2>
-            <p>
-                Se um parente ou amigo mandar mensagem por um número diferente pedindo dinheiro urgente via Pix, <strong>ligue para ele</strong> no número antigo antes de enviar qualquer valor.
-            </p>
-        </section>
+            <section class="dica-card atencao">
+                <h2>4. Golpes no WhatsApp (Pedindo Dinheiro)</h2>
+                <p>
+                    Se algum amigo ou familiar mandar mensagem pedindo dinheiro porque mudou de número, 
+                    <strong>ligue para o número antigo dele</strong> para confirmar se é verdade.
+                </p>
+            </section>
+        </main>
 
-        <section class="card-dica">
-            <div class="icone">💳</div>
-            <h2>4. Compras Seguras na Internet</h2>
-            <p>
-                Ao fazer compras, confira se o site tem o desenho de um <strong>cadeado fechado</strong> ao lado do endereço na parte de cima da tela.
-            </p>
-        </section>
-
-        <section class="secao-ajuda">
-            <h2>Precisa de ajuda urgente?</h2>
-            <p>Em caso de suspeita de golpe, procure imediatamente um familiar de confiança ou vá ao seu banco.</p>
-        </section>
-
-    </main>
-
-    <footer class="rodape">
-        <p>Desenvolvido para ajudar você a navegar com tranquilidade.</p>
-    </footer>
+        <footer>
+            <p style="margin-bottom: 15px;">Ficou com alguma dúvida?</p>
+            <a href="#" class="btn-ajuda">Pedir Ajuda a um Familiar</a>
+        </footer>
+    </div>
 
 </body>
 </html>
