@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia de Segurança Digital para Terceira Idade</title>
+  <title>Guia de Segurança Digital para a Terceira Idade</title>
   <style>
     /* ------------------------------------------------------------------
-       1. RESET E ESTILOS GERAIS DE ACESSIBILIDADE
+       1. CONFIGURAÇÕES BÁSICAS E ACCESSIBILIDADE
     ------------------------------------------------------------------ */
     * {
       box-sizing: border-box;
@@ -14,29 +14,46 @@
       padding: 0;
     }
 
-    /* Uso de rem/em e font-size maior (20px) para facilitar a leitura */
     html {
-      font-size: 125%; /* 100% = 16px, 125% = 20px base */
+      font-size: 125%; /* Base ampliada: 1rem = 20px */
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
       background-color: #f7f9fc;
-      color: #1a1a1a; /* Contraste elevado (Preto quase puro em fundo claro) */
+      color: #1a1a1a; /* Alto contraste: texto escuro em fundo claro */
     }
 
-    /* Foco acessível para navegação via teclado (Tab) */
+    /* Link invisível para leitores de tela e navegação por teclado */
+    .pular-navegacao {
+      position: absolute;
+      top: -100px;
+      left: 10px;
+      background: #ffcc00;
+      color: #000000;
+      padding: 10px 15px;
+      z-index: 100;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .pular-navegacao:focus {
+      top: 10px;
+    }
+
+    /* Foco acessível bem destacado para a tecla Tab */
     :focus {
       outline: 4px solid #ffcc00 !important;
       outline-offset: 3px;
     }
 
     /* ------------------------------------------------------------------
-       2. CABEÇALHO (HEADER)
+       2. CABEÇALHO
     ------------------------------------------------------------------ */
     header {
-      background-color: #003366; /* Azul escuro com alto contraste */
+      background-color: #003366; /* Azul escuro de alto contraste */
       color: #ffffff;
       padding: 2.5rem 1rem;
       text-align: center;
@@ -56,7 +73,7 @@
     }
 
     /* ------------------------------------------------------------------
-       3. CONTEÚDO PRINCIPAL (MAIN)
+       3. CONTEÚDO PRINCIPAL
     ------------------------------------------------------------------ */
     main {
       max-width: 850px;
@@ -79,7 +96,7 @@
     }
 
     /* ------------------------------------------------------------------
-       4. SEÇÃO DE DICAS (CARDS)
+       4. CARDS DE DICAS DE SEGURANÇA
     ------------------------------------------------------------------ */
     .dicas-lista {
       display: flex;
@@ -105,14 +122,13 @@
       margin-bottom: 1rem;
     }
 
-    /* Caixa de destaque para a ação prática */
     .alerta-pratico {
       background-color: #fff3cd;
       border-left: 6px solid #856404;
       padding: 1rem;
       border-radius: 6px;
       font-weight: bold;
-      color: #333333;
+      color: #222222;
     }
 
     /* ------------------------------------------------------------------
@@ -135,7 +151,7 @@
 
     .btn-ligar {
       display: inline-block;
-      background-color: #1e7e34; /* Verde forte legível */
+      background-color: #1e7e34; /* Verde legível */
       color: #ffffff;
       font-size: 1.4rem;
       font-weight: bold;
@@ -145,15 +161,16 @@
       margin-top: 1rem;
       border: 3px solid #145222;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, transform 0.1s;
     }
 
-    .btn-ligar:hover {
+    .btn-ligar:hover, .btn-ligar:focus {
       background-color: #145222;
+      transform: scale(1.02);
     }
 
     /* ------------------------------------------------------------------
-       6. RODAPÉ (FOOTER)
+       6. RODAPÉ
     ------------------------------------------------------------------ */
     footer {
       background-color: #1a1a1a;
@@ -167,10 +184,10 @@
       font-size: 1rem;
     }
 
-    /* Ajuste para telas menores */
+    /* Responsividade para telas menores */
     @media (max-width: 600px) {
       html {
-        font-size: 110%; /* Ligeiro ajuste mantendo a legibilidade */
+        font-size: 110%;
       }
       .btn-ligar {
         width: 100%;
@@ -180,24 +197,27 @@
 </head>
 <body>
 
-  <header>
+  <a href="#conteudo-principal" class="pular-navegacao">Ir para o conteúdo principal</a>
+
+  <header role="banner">
     <h1>Segurança Digital Simplificada</h1>
     <p>Aprenda a navegar na internet com tranquilidade e proteção.</p>
   </header>
 
-  <main>
-    <section class="intro-box">
+  <main id="conteudo-principal" role="main">
+    
+    <section class="intro-box" aria-label="Introdução">
       <h2>Seja bem-vindo(a)!</h2>
       <p>A internet é uma ótima ferramenta para falar com a família e resolver tarefas do dia a dia. Para navegar sem medo, confira as 4 dicas principais abaixo:</p>
     </section>
 
-    <section class="dicas-lista">
+    <section class="dicas-lista" aria-label="Dicas de Segurança">
 
       <article class="card-dica">
         <h3>1. Pedidos de Dinheiro pelo WhatsApp</h3>
         <p>Se algum familiar ou amigo mandar mensagem pedindo dinheiro urgente porque "mudou de número", <strong>pare e desconfie</strong>.</p>
         <div class="alerta-pratico">
-          📌 O que fazer: Faça uma ligação normal para o número antigo do seu parente antes de fazer qualquer pagamento.
+          <strong>Ação Recomendada:</strong> Faça uma ligação normal para o número antigo do seu parente antes de enviar qualquer valor.
         </div>
       </article>
 
@@ -205,15 +225,15 @@
         <h3>2. Links Estranhos por Mensagem ou E-mail</h3>
         <p>Promessas de prêmios, avisos de "sua conta foi bloqueada" ou ofertas muito baratas costumam ser armadilhas de golpistas.</p>
         <div class="alerta-pratico">
-          📌 O que fazer: Não clique no link. Apague a mensagem imediatamente.
+          <strong>Ação Recomendada:</strong> Não clique no link. Apague a mensagem imediatamente.
         </div>
       </article>
 
       <article class="card-dica">
         <h3>3. Senhas e Códigos Secretos</h3>
-        <p>Bancos e empresas <strong>nunca pedem</strong> suas senhas nem os códigos que chegam por SMS no seu celular.</p>
+        <p>Bancos e empresas <strong>nunca pedem</strong> suas senhas nem os códigos que chegam por mensagem (SMS) no seu celular.</p>
         <div class="alerta-pratico">
-          📌 O que fazer: Nunca fale nem digite suas senhas para pessoas que ligarem para você.
+          <strong>Ação Recomendada:</strong> Nunca fale nem digite suas senhas para pessoas que ligarem para você.
         </div>
       </article>
 
@@ -221,20 +241,21 @@
         <h3>4. Como Guardar Suas Senhas</h3>
         <p>Evite usar datas de nascimento, nomes de parentes ou sequências simples como "123456".</p>
         <div class="alerta-pratico">
-          📌 O que fazer: Anote suas senhas em um caderno ou agenda física mantidos em local seguro na sua casa.
+          <strong>Ação Recomendada:</strong> Anote suas senhas em um caderno ou agenda física mantidos em local seguro na sua casa.
         </div>
       </article>
 
     </section>
 
-    <section class="secao-ajuda">
+    <section class="secao-ajuda" aria-label="Ajuda e Suporte">
       <h2>Está com dúvidas ou acha que é um golpe?</h2>
       <p>Não tome nenhuma atitude sozinho(a). Peça ajuda a alguém de sua confiança.</p>
-      <a href="tel:190" class="btn-ligar">Pedir Ajuda de Emergência</a>
+      <a href="tel:190" class="btn-ligar" aria-label="Ligar para a emergência ou pedir ajuda">Pedir Ajuda de Emergência</a>
     </section>
+
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>Guia de Acessibilidade e Segurança Digital para Idosos.</p>
   </footer>
 
