@@ -1,0 +1,84 @@
+/* Configurações Globais de Acessibilidade */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* Fonte maior para facilitar a leitura */
+    font-size: 20px; 
+    line-height: 1.6;
+    background-color: #F4F6F9;
+    color: #111111; /* Alto contraste */
+    padding: 20px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: #004B87; /* Azul escuro acessível */
+    color: #FFFFFF;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecalho h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Layout dos Cartões */
+.conteudo-principal {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-dica {
+    background-color: #FFFFFF;
+    border: 3px solid #004B87; /* Borda espessa para destaque */
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-dica .icone {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card-dica h2 {
+    font-size: 26px;
+    color: #004B87;
+    margin-bottom: 12px;
+}
+
+/* Destaque para Recados Importantes */
+.secao-ajuda {
+    background-color: #FFF3CD;
+    border: 3px solid #856404;
+    color: #856404;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.secao-ajuda h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 18px;
+    color: #555555;
+}
